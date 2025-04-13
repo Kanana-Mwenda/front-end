@@ -11,15 +11,15 @@ const DashboardBarGraph = ({ data }) => {
             {
                 label: 'Enrollments',
                 data: data.map((item) => item.enrollmentCount),
-                backgroundColor: 'rgba(255, 99, 132, 0.6)',
-                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'hsla(235, 74.80%, 29.60%, 0.60)',
+                borderColor: 'hsl(189, 74.10%, 31.80%)',
                 borderWidth: 2,
             },
             {
                 label: 'Average Grade',
                 data: data.map((item) => item.averageGrade),
                 backgroundColor: 'rgba(54, 162, 235, 0.6)',
-                borderColor: 'rgba(54, 162, 235, 1)',
+                borderColor: 'rgb(184, 30, 145)',
                 borderWidth: 1,
             },
         ],

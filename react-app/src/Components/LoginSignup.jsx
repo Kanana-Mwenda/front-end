@@ -13,6 +13,7 @@ const LoginSignup = () => {
         name: '',
         email: '',
         password: '',
+        departmentId: '',
     });
 
     const userType = location.state?.userType || 'student';
@@ -30,17 +31,20 @@ const LoginSignup = () => {
             name: formData.name,
             email: formData.email,
             password: formData.password,
+            ...(userType === 'instructor' && action === 'register'
+                ? { departmentId: formData.departmentId }
+                : {}),
         };
 
         try {
             if (action === 'login') {
-                axios.get(`${baseUrl}${url}`)
+                axios
+                    .get(`${baseUrl}${url}`)
                     .then((response) => {
                         const users = response.data;
                         const user = users.find(
                             (u) =>
-                                u.email === formData.email &&
-                                u.name === formData.name // Validate email and name
+                                u.email === formData.email && u.name === formData.name
                         );
                         if (user) {
                             alert('Successfully logged in.');
@@ -57,16 +61,18 @@ const LoginSignup = () => {
                         alert('An error occurred. Please try again.');
                     });
             } else {
-                axios.get(`${baseUrl}${url}`)
+                axios
+                    .get(`${baseUrl}${url}`)
                     .then((response) => {
                         const users = response.data;
                         const existingUser = users.find(
-                            (u) => u.name === formData.name && u.email === formData.email // Check if name and email already exist
+                            (u) => u.name === formData.name && u.email === formData.email
                         );
                         if (existingUser) {
                             alert('User already exists.');
                         } else {
-                            axios.post(`${baseUrl}${url}`, data)
+                            axios
+                                .post(`${baseUrl}${url}`, data)
                                 .then((response) => {
                                     const responseData = response.data;
                                     if (responseData && responseData.email) {
@@ -77,16 +83,33 @@ const LoginSignup = () => {
                                             navigate('/dashboard');
                                         }
                                     } else {
-                                        alert('Registration failed. Please try again.');
+                                        alert(
+                                            'Registration failed. Please try again.'
+                                        );
                                     }
                                 })
-                                .catch(() => {
-                                    alert('Registration failed. Email might already exist.');
+                                .catch((error) => {
+                                    if (
+                                        error.response &&
+                                        error.response.data &&
+                                        error.response.data.error ===
+                                        'Email already exists'
+                                    ) {
+                                        alert(
+                                            'Email already exists. Please use a different email.'
+                                        );
+                                    } else {
+                                        alert(
+                                            'Registration failed. Please try again.'
+                                        );
+                                    }
                                 });
                         }
                     })
                     .catch(() => {
-                        alert('An error occurred while checking for existing users.');
+                        alert(
+                            'An error occurred while checking for existing users.'
+                        );
                     });
             }
         } catch (error) {
@@ -104,7 +127,11 @@ const LoginSignup = () => {
             <div className={`wrapper ${action === 'register' ? 'active' : ''}`}>
                 <div className="form-box login">
                     <form onSubmit={handleSubmit}>
-                        <h1>{userType === 'student' ? 'Student Login' : 'Instructor Login'}</h1>
+                        <h1>
+                            {userType === 'student'
+                                ? 'Student Login'
+                                : 'Instructor Login'}
+                        </h1>
                         <div className="input-box">
                             <input
                                 type="text"
@@ -131,7 +158,13 @@ const LoginSignup = () => {
                         <div className="register-link">
                             <p>
                                 Don't have an account?{' '}
-                                <a href="#" onClick={(e) => { e.preventDefault(); toggleAction(); }}>
+                                <a
+                                    href="#"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        toggleAction();
+                                    }}
+                                >
                                     Register
                                 </a>
                             </p>
@@ -141,7 +174,11 @@ const LoginSignup = () => {
 
                 <div className="form-box register">
                     <form onSubmit={handleSubmit}>
-                        <h1>{userType === 'student' ? 'Student Registration' : 'Instructor Registration'}</h1>
+                        <h1>
+                            {userType === 'student'
+                                ? 'Student Registration'
+                                : 'Instructor Registration'}
+                        </h1>
                         <div className="input-box">
                             <input
                                 type="text"
@@ -175,11 +212,30 @@ const LoginSignup = () => {
                             />
                             <FaLock className="icon" />
                         </div>
+                        {userType === 'instructor' && (
+                            <div className="input-box">
+                                <input
+                                    type="text"
+                                    name="departmentId"
+                                    placeholder="Department ID"
+                                    value={formData.departmentId}
+                                    onChange={handleChange}
+                                    required
+                                />
+                                <FaUser className="icon" />
+                            </div>
+                        )}
                         <button type="submit">Register</button>
                         <div className="register-link">
                             <p>
                                 Already have an account?{' '}
-                                <a href="#" onClick={(e) => { e.preventDefault(); toggleAction(); }}>
+                                <a
+                                    href="#"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        toggleAction();
+                                    }}
+                                >
                                     Login
                                 </a>
                             </p>
