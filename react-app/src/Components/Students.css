@@ -1,0 +1,93 @@
+/* Styling for Remove Student Button */
+.remove-student-button {
+  background-color: #007BFF; /* Bright blue button */
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.remove-student-button:hover {
+  background-color: #0056b3; /* Darker blue for hover effect */
+}
+
+/* Styling for Form Container */
+.form-container {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f0f8ff; /* Light blue background for the form section */
+}
+
+.form-container input {
+  margin: 10px 0;
+  padding: 8px;
+  width: calc(100% - 22px); /* Adjust width based on container */
+  font-size: 14px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Styling for Card Container */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between cards */
+  margin-top: 20px;
+  justify-content: center; /* Center-align cards */
+}
+
+/* Styling for Each Card */
+.card {
+  border: 1px solid #007BFF; /* Border with a light blue color */
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #e6f2ff; /* Subtle blue card background */
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for modern look */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-width: 200px; /* Minimum card width for consistent design */
+  max-width: 350px; /* Maximum card width to prevent cards from being too large */
+  flex: 1 1 auto; /* Allow flexible width based on content */
+  word-wrap: break-word; /* Ensure long words break into the next line */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lifting effect on hover */
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+}
+
+.card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0056b3; /* Dark blue for card titles */
+  margin: 0 0 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #333; /* Neutral text color for content */
+  margin: 5px 0;
+  line-height: 1.5; /* Improve readability */
+}
+
+/* Styling for Card Text Emphasis */
+.card p span {
+  font-weight: bold; /* Highlight for key details */
+  color: #0056b3; /* Emphasis with blue */
+}
+
+/* General Body and Header Styling */
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #0056b3; /* Consistent title color */
+  text-align: center;
+  margin-bottom: 20px;
+}

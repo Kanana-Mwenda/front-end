@@ -1,0 +1,108 @@
+/* CourseList.css */
+
+.course_wrapper {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #a9d6f2; /* Light background for contrast */
+  }
+  
+  .course_wrapper h2 {
+    font-size: 2.5rem; /* Prominent heading */
+    color: #18324b; /* Dark blue for readability */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .course_wrapper h2 span {
+    color: #007bff; /* Highlight "Courses" with blue */
+  }
+  
+  .course_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .course_container a {
+    text-decoration: none; /* Remove default link styling */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .course_container a:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+  
+  /* Styling for individual courses */
+  .course_card {
+    background: linear-gradient(135deg, #cde9ff, #a9d6f2);/* Subtle light blue for card */
+    border-radius: 16px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    width: 350px;
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+  }
+  
+  .course_card:hover {
+    transform: translateY(-8px); /* Lift card on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Enhanced hover shadow */
+  }
+  
+  .course_image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Maintain image aspect ratio */
+    border-radius: 16px 16px 0 0;
+  }
+  
+  .course_info {
+    padding: 20px;
+    flex-grow: 1;
+    text-align: center;
+    background-color: #ffffff; /* Clean background for content */
+  }
+  
+  .course_info h3 {
+    margin: 10px 0;
+    color: #18324b; /* Darker blue for headings */
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .course_info p {
+    color: #4a4a4a; /* Neutral gray for text */
+    margin: 0 0 15px 0;
+    line-height: 1.6;
+    font-size: 0.9rem; /* Smaller text for descriptions */
+  }
+  
+  .course_meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #626567;
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+  
+  /* Responsive styling for smaller screens */
+  @media (max-width: 768px) {
+    .course_container {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .course_card {
+      width: 90%; /* Adjust width for smaller screens */
+      margin: 0 auto; /* Center the cards */
+    }
+  
+    .course_wrapper h2 {
+      font-size: 2rem; /* Adjust heading size */
+    }
+  }
+  

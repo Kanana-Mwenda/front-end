@@ -1,0 +1,94 @@
+/* General Styling for the Form Container */
+.form-container {
+  margin: 15px 0;
+  padding: 15px;
+  background-color: #2a5d78; /* Light background for the form section */
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Slightly smaller shadow */
+}
+
+/* Form Input Fields */
+.form-container input {
+  display: block;
+  width: 90%; /* Reduced width for a medium size */
+  margin: 8px 0;
+  padding: 8px;
+  font-size: 14px; /* Slightly smaller font size */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Buttons Styling */
+.form-container button {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 14px; /* Slightly smaller font size */
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #0056b3; /* Darker blue for hover effect */
+}
+
+/* Styling for Headers */
+.form-container h2 {
+  font-size: 20px; /* Reduced font size */
+  font-weight: bold;
+  color: white; /* Dark text for readability */
+  border-bottom: 2px solid white; /* Underline for separation */
+  padding-bottom: 8px;
+}
+
+/* Card Styling */
+/* Card Styling */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Space between cards */
+  margin-top: 15px;
+}
+
+.card {
+  width: 300px; /* Fixed width for consistent card size */
+  height: 200px; /* Fixed height to equalize card sizes */
+  border: 1px solid hsl(234, 54%, 31%);
+  border-radius: 8px;
+  padding: 10px;
+  background-color: steelblue; /* Appealing blue background */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Reduced shadow */
+  overflow: hidden; /* Prevent content overflow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px); /* Subtle lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly lighter shadow */
+}
+
+.card h3 {
+  font-size: 18px; /* Medium header font size */
+  font-weight: bold;
+  color: #fff; /* White text for readability on blue background */
+  margin: 0 0 10px;
+  text-align: center; /* Center-align card titles */
+}
+
+.card p {
+  font-size: 14px; /* Slightly smaller font size for content */
+  color: #fff; /* White text for readability on blue background */
+  margin: 5px 0;
+  text-align: center; /* Center-align card text */
+  line-height: 1.5; /* Improve readability */
+}
+
+/* Bold and Distinct Styling for Labels */
+.form-container input::placeholder,
+.card p {
+  font-weight: bold; /* Emphasizes labels and values */
+  color: #555; /* Dark gray for emphasis */
+}

@@ -1,0 +1,176 @@
+/* Login Component Wrapper */
+.login-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #1a1a2e;
+}
+
+/* Wrapper Styles */
+.login-container .wrapper {
+  position: relative;
+  width: 420px;
+  height: 550px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: height 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container .wrapper.active {
+  height: 600px;
+}
+
+/* Form Box */
+.login-container .wrapper .form-box {
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.login-container .wrapper .form-box.login {
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+.login-container .wrapper.active .form-box.login {
+  transform: translateX(-420px);
+}
+
+.login-container .wrapper .form-box.register {
+  position: absolute;
+  transform: translateX(420px);
+  transition: transform 0.3s ease;
+}
+
+.login-container .wrapper.active .form-box.register {
+  transform: translateX(0);
+}
+
+/* Form Header */
+.login-container form h1 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Input Box */
+.login-container form .input-box {
+  position: relative;
+  width: 90%;
+  margin: 25px 0;
+}
+
+.login-container .input-box input {
+  width: 100%;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  border-radius: 25px;
+  font-size: 16px;
+  color: #fff;
+  padding: 0 45px 0 20px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.login-container .input-box input:focus {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.login-container .input-box input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+.login-container .input-box .icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Remember & Forgot */
+.login-container form .remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 10px 0 20px;
+  color: #fff;
+}
+
+.login-container .remember-forgot label input {
+  accent-color: #fff;
+  margin-right: 5px;
+}
+
+.login-container .remember-forgot a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: text-decoration 0.3s ease, color 0.3s ease;
+}
+
+.login-container .remember-forgot a:hover {
+  color: #f0f0f0;
+  text-decoration: underline;
+}
+
+/* Button Styles */
+.login-container form button {
+  width: 70%;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container form button:hover {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Register Link */
+.login-container form .register-link {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 15px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.login-container .register-link p a {
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  color:aquamarine;
+}
+
+.login-container .register-link p a:hover {
+  color: rgb(52, 167, 128);
+}

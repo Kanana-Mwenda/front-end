@@ -1,0 +1,98 @@
+/* Navbar.css */
+
+.nav {
+    background-color: #a9d6f2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 12px; /* Adjusted padding */
+    top: 0;
+    width: 95%; /* Adjusted width */
+    max-width: 1200px; /* Added max-width to prevent excessive width on large screens */
+    margin: 10px auto;
+    border-radius: 20px; /* Slightly reduced border-radius */
+    position: sticky;
+    z-index: 100;
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav_header .nav_logo {
+    font-size: 1.6rem; /* Slightly reduced logo size */
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+  .nav_header .nav_logo span {
+    color: #007bff;
+  }
+  
+  .links ul {
+    list-style: none;
+    display: flex;
+    gap: 25px; /* Slightly reduced gap */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .links ul li {
+    font-size: 0.95rem; /* Slightly reduced font size */
+    font-weight: 600;
+  }
+  
+  .links ul li a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s ease;
+    padding: 6px 10px; /* Adjusted padding */
+    border-radius: 4px; /* Adjusted border-radius */
+  }
+  
+  .links ul li a:hover {
+    color: #007bff;
+    background-color: rgba(0, 123, 255, 0.1);
+  }
+  
+  .links ul li button {
+    padding: 0.6rem 1.2rem; /* Adjusted padding */
+    font-size: 0.95rem; /* Adjusted font size */
+    font-weight: 600;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px; /* Adjusted border-radius */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .links ul li button:hover {
+    background-color: #0056b3;
+    transform: scale(1.03); /* Slightly reduced scale */
+  }
+  
+  .links ul li button:active {
+    transform: scale(0.97); /* Slightly adjusted scale */
+  }
+  
+  /* Media query for mobile responsiveness */
+  @media (max-width: 768px) {
+    .links ul {
+      flex-direction: column;
+      gap: 8px; /* Adjusted gap */
+      align-items: center;
+    }
+  
+    .nav {
+      padding: 10px; /* Adjusted padding */
+      width: 98%; /* Adjusted width */
+      border-radius: 15px; /* Adjusted border-radius */
+    }
+  
+    .nav_header .nav_logo {
+      font-size: 1.4rem; /* Adjusted logo size */
+    }
+  }
