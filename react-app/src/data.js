@@ -39,4 +39,12 @@ export const coursesData = [
     duration: '20 weeks',
     level: 'Advanced'
   },
+  {
+  id: 6,
+  title: 'Networking',
+  description: 'This course covers the fundamentals of computer networking, including network design, configuration, and troubleshooting. It prepares learners to work with network technologies, ensuring seamless communication and connectivity in diverse environments.',
+  image: '/src/assets/glowing-circuit-cloud-computing-hologram-dark-background-database-server-concept-3d-rendering_670147-32812.avif',
+  duration: '10 weeks',
+  level: 'Beginner'
+}
 ];
