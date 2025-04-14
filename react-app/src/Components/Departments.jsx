@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import BarChart from './BarChart'; // Import the BarChart component
+import BarChart from './BarChart'; 
 import DepartmentForm from './DepartmentForm';
 import './Departments.css';
 
